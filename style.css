@@ -1655,3 +1655,24 @@ body {
     }
 }
 
+/* =========================================================
+   🎵 YOUTUBE — REPRODUCTOR OCULTO
+   ========================================================= */
+
+.youtube-player-container {
+    position: fixed;
+
+    width: 1px;
+    height: 1px;
+
+    left: -100px;
+    top: -100px;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
