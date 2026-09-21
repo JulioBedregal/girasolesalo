@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- =====================================================
+         CONFIGURACIÓN
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Un pequeño detalle especial para el 21 de septiembre 🌻"
+    >
+
+    <meta
+        name="theme-color"
+        content="#17113b"
+    >
+
+
+    <!-- =====================================================
+         TÍTULO
+    ====================================================== -->
+
+    <title>
+        Para ti 🌻 | 21 de Septiembre
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         BOOTSTRAP 5.0
+    ====================================================== -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         NUESTRO CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         🌻 PÁGINA PRINCIPAL
+    ====================================================== -->
+
+    <main class="sunflower-page">
+
+
+        <!-- =================================================
+             ✨ PARTÍCULAS
+        ================================================== -->
+
+        <div
+            class="particles"
+            id="particles"
+        ></div>
+
+
+        <!-- =================================================
+             🌙 LUNA / BRILLO
+        ================================================== -->
+
+        <div class="moon-glow"></div>
+
+
+        <!-- =================================================
+             🌻 SECCIÓN PRINCIPAL
+        ================================================== -->
+
+        <section class="hero-section container-fluid">
+
+
+            <!-- =============================================
+                 CONTENIDO
+            ============================================== -->
+
+            <div class="hero-content text-center">
+
+
+                <!-- Mensaje pequeño -->
+
+                <p class="small-message">
+
+                    Para alguien muy especial ✨
+
+                </p>
+
+
+                <!-- Título -->
+
+                <h1 class="main-title">
+
+                    Feliz 21 de Septiembre
+
+                </h1>
+
+
+                <!-- Subtítulo -->
+
+                <h2 class="subtitle">
+
+                    🌻 Un pequeño detalle para ti 🌻
+
+                </h2>
+
+
+                <!-- Mensaje -->
+
+                <p class="main-message">
+
+                    Que estos girasoles representen
+                    un poquito de la alegría y luz
+                    que traes a mi vida.
+
+                </p>
+
+
+                <!-- =========================================
+                     BOTÓN PRINCIPAL
+                ========================================== -->
+
+                <button
+                    id="startButton"
+                    class="btn btn-sunflower"
+                    type="button"
+                >
+
+                    <span>🌻</span>
+
+                    Ver mi sorpresa
+
+                    <span>✨</span>
+
+                </button>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 🌻 CAMPO DE GIRASOLES
+            ================================================== -->
+
+            <div
+                class="sunflower-field"
+                id="sunflowerField"
+            >
+
+                <!--
+                    Los girasoles serán creados
+                    dinámicamente mediante JavaScript.
+                -->
+
+            </div>
+
+
+            <!-- =================================================
+                 💌 MENSAJE FINAL
+            ================================================== -->
+
+            <div
+                id="loveMessage"
+                class="love-message text-center"
+            >
+
+                <div class="message-card">
+
+
+                    <!-- Girasol -->
+
+                    <div class="card-sunflower">
+
+                        🌻
+
+                    </div>
+
+
+                    <!-- Título -->
+
+                    <h3>
+
+                        Para ti
+
+                    </h3>
+
+
+                    <!-- Mensaje -->
+
+                    <p>
+
+                        Así como los girasoles
+                        buscan la luz, espero que
+                        siempre encuentres motivos
+                        para sonreír.
+
+                    </p>
+
+
+                    <!-- Firma -->
+
+                    <p class="signature">
+
+                        Con cariño ❤️
+
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =====================================================
+             🎵 REPRODUCTOR DE MÚSICA
+        ====================================================== -->
+
+        <div class="music-player">
+
+
+            <!-- Botón -->
+
+            <button
+                id="musicButton"
+                class="music-button"
+                type="button"
+                aria-label="Reproducir música"
+            >
+
+                🎵
+
+            </button>
+
+
+            <!-- Información -->
+
+            <div class="music-info">
+
+
+                <span class="music-title">
+
+                    Una canción para ti 🌻
+
+                </span>
+
+
+                <span
+                    id="musicStatus"
+                    class="music-status"
+                >
+
+                    Música pausada
+
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =====================================================
+             🎵 REPRODUCTOR YOUTUBE
+             
+             Se mantiene fuera de la vista.
+        ====================================================== -->
+
+        <div
+            id="youtubePlayerContainer"
+            class="youtube-player-container"
+        >
+
+            <div
+                id="youtubePlayer"
+            ></div>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         🌻 MODAL DE BIENVENIDA
+    ====================================================== -->
+
+    <div
+        class="modal fade"
+        id="welcomeModal"
+        tabindex="-1"
+        aria-labelledby="welcomeModalLabel"
+        aria-hidden="true"
+    >
+
+
+        <div
+            class="modal-dialog modal-dialog-centered"
+        >
+
+
+            <div
+                class="modal-content welcome-modal"
+            >
+
+
+                <div
+                    class="modal-body text-center"
+                >
+
+
+                    <!-- =====================================
+                         🌻 Girasol
+                    ====================================== -->
+
+                    <div class="modal-flower">
+
+                        🌻
+
+                    </div>
+
+
+                    <!-- =====================================
+                         Título
+                    ====================================== -->
+
+                    <h2
+                        id="welcomeModalLabel"
+                    >
+
+                        Tengo algo para ti...
+
+                    </h2>
+
+
+                    <!-- =====================================
+                         Texto
+                    ====================================== -->
+
+                    <p>
+
+                        Una pequeña sorpresa
+                        hecha especialmente
+                        para este 21 de septiembre. 💛
+
+                    </p>
+
+
+                    <!-- =====================================
+                         BOTÓN
+                    ====================================== -->
+
+                    <button
+                        id="surpriseButton"
+                        type="button"
+                        class="btn btn-sunflower"
+                    >
+
+                        Abrir sorpresa ✨
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         BOOTSTRAP 5.0
+    ====================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- =====================================================
+         API OFICIAL DE YOUTUBE
+    ====================================================== -->
+
+    <script
+        src="https://www.youtube.com/iframe_api">
+    </script>
+
+
+    <!-- =====================================================
+         NUESTRO JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        src="script.js">
+    </script>
+
+
+</body>
+
+</html>
