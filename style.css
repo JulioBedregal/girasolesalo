@@ -1,1 +1,1657 @@
+/* =========================================================
+   🌻 GIRASOLES — 21 DE SEPTIEMBRE
+   STYLE.CSS — PARTE 1
+   ========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+    --yellow: #ffd43b;
+    --sun-yellow: #ffbf00;
+    --orange: #ff9800;
+    --dark-orange: #e67700;
+
+    --green: #3f8f3f;
+    --dark-green: #245c2a;
+
+    --sky-dark: #17113b;
+    --sky-purple: #33245f;
+    --sky-orange: #f08a4b;
+
+    --white: #ffffff;
+    --soft-white: #fff9e6;
+
+    --shadow: rgba(0, 0, 0, 0.30);
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    font-family: "Poppins", sans-serif;
+
+    background: #17113b;
+}
+
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================= */
+
+.sunflower-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    color: var(--white);
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(255, 193, 87, 0.18),
+            transparent 28%
+        ),
+        linear-gradient(
+            180deg,
+            var(--sky-dark) 0%,
+            var(--sky-purple) 48%,
+            var(--sky-orange) 100%
+        );
+}
+
+
+/* =========================================================
+   EFECTO DE BRILLO DEL CIELO
+   ========================================================= */
+
+.sunflower-page::before {
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    top: -420px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: rgba(255, 196, 75, 0.18);
+
+    filter: blur(80px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LUNA / BRILLO
+   ========================================================= */
+
+.moon-glow {
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    top: 8%;
+    right: 10%;
+
+    border-radius: 50%;
+
+    background: rgba(255, 248, 203, 0.95);
+
+    box-shadow:
+        0 0 30px rgba(255, 244, 185, 0.6),
+        0 0 80px rgba(255, 220, 120, 0.35);
+
+    opacity: 0.9;
+
+    pointer-events: none;
+}
+
+.moon-glow::after {
+    content: "";
+
+    position: absolute;
+
+    width: 145px;
+    height: 145px;
+
+    top: -8px;
+    left: 18px;
+
+    border-radius: 50%;
+
+    background: var(--sky-dark);
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   PARTÍCULAS
+   ========================================================= */
+
+.particles {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    box-shadow:
+        0 0 8px rgba(255, 255, 255, 0.8);
+
+    animation:
+        twinkle 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero-section {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding-top: 70px;
+    padding-bottom: 250px;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+   ========================================================= */
+
+.hero-content {
+    position: relative;
+
+    max-width: 850px;
+
+    padding: 30px 20px;
+
+    z-index: 20;
+
+    animation:
+        fadeInDown 1.5s ease forwards;
+}
+
+
+/* =========================================================
+   TEXTO PEQUEÑO
+   ========================================================= */
+
+.small-message {
+    margin-bottom: 10px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    font-size: 1rem;
+
+    font-weight: 300;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.main-title {
+    margin-bottom: 15px;
+
+    color: var(--soft-white);
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(3rem, 8vw, 6rem);
+
+    font-weight: 700;
+
+    line-height: 1.1;
+
+    text-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.3),
+        0 0 25px rgba(255, 210, 70, 0.25);
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+   ========================================================= */
+
+.subtitle {
+    margin-bottom: 20px;
+
+    color: var(--yellow);
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(1.7rem, 4vw, 2.7rem);
+
+    font-weight: 600;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   MENSAJE
+   ========================================================= */
+
+.main-message {
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 1.05rem;
+
+    font-weight: 300;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   BOTÓN PRINCIPAL
+   ========================================================= */
+
+.btn-sunflower {
+    position: relative;
+
+    padding: 13px 28px;
+
+    border: none;
+    border-radius: 50px;
+
+    color: #5c3500;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe66d,
+            #ffc107
+        );
+
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(255, 196, 0, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn-sunflower:hover {
+    color: #4a2a00;
+
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(255, 204, 0, 0.45);
+}
+
+.btn-sunflower:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.btn-sunflower span {
+    display: inline-block;
+
+    margin: 0 5px;
+
+    transition: transform 0.3s ease;
+}
+
+.btn-sunflower:hover span {
+    transform: rotate(15deg) scale(1.15);
+}
+
+
+/* =========================================================
+   CAMPO DE GIRASOLES
+   ========================================================= */
+
+.sunflower-field {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 310px;
+
+    overflow: hidden;
+
+    z-index: 10;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 0%,
+            rgba(30, 74, 35, 0.12) 20%,
+            rgba(22, 58, 29, 0.55) 100%
+        );
+}
+
+
+/* =========================================================
+   SUELO
+   ========================================================= */
+
+.sunflower-field::before {
+    content: "";
+
+    position: absolute;
+
+    left: -5%;
+    bottom: -100px;
+
+    width: 110%;
+    height: 220px;
+
+    border-radius: 50% 50% 0 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #285b2e,
+            #173b20
+        );
+
+    box-shadow:
+        0 -15px 35px rgba(20, 60, 25, 0.25);
+}
+
+
+/* =========================================================
+   MENSAJE FINAL
+   ========================================================= */
+
+.love-message {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 100%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.7);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 100;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        visibility 1s ease;
+}
+
+.love-message.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+}
+
+
+/* =========================================================
+   TARJETA DEL MENSAJE
+   ========================================================= */
+
+.message-card {
+    width: min(90%, 500px);
+
+    margin: auto;
+
+    padding: 40px 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 25px;
+
+    background:
+        rgba(30, 20, 65, 0.82);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35),
+        0 0 40px rgba(255, 193, 7, 0.12);
+}
+
+.message-card h3 {
+    margin-bottom: 15px;
+
+    color: var(--yellow);
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 2.8rem;
+}
+
+.message-card p {
+    color: rgba(255, 255, 255, 0.9);
+
+    line-height: 1.8;
+}
+
+.signature {
+    margin-top: 20px;
+
+    color: var(--yellow) !important;
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 1.7rem;
+}
+
+.card-sunflower {
+    margin-bottom: 10px;
+
+    font-size: 4rem;
+
+    animation:
+        flowerPulse 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   REPRODUCTOR DE MÚSICA
+   ========================================================= */
+
+.music-player {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    min-width: 230px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 50px;
+
+    background:
+        rgba(20, 15, 50, 0.75);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+
+    z-index: 500;
+}
+
+
+/* =========================================================
+   BOTÓN DE MÚSICA
+   ========================================================= */
+
+.music-button {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe66d,
+            #ffb703
+        );
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.3s ease;
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+}
+
+.music-button.playing {
+    animation:
+        musicPulse 1.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   INFORMACIÓN DE MÚSICA
+   ========================================================= */
+
+.music-info {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.music-title {
+    color: white;
+
+    font-size: 0.8rem;
+
+    font-weight: 500;
+}
+
+.music-status {
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 0.65rem;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.welcome-modal {
+    border: none;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            145deg,
+            #292052,
+            #17113b
+        );
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45);
+}
+
+.welcome-modal .modal-body {
+    padding: 45px 30px;
+}
+
+.welcome-modal h2 {
+    margin-bottom: 15px;
+
+    color: var(--yellow);
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 2.7rem;
+}
+
+.welcome-modal p {
+    margin-bottom: 25px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    line-height: 1.7;
+}
+
+.modal-flower {
+    margin-bottom: 15px;
+
+    font-size: 4rem;
+
+    animation:
+        flowerPulse 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ANIMACIONES GENERALES
+   ========================================================= */
+
+@keyframes fadeInDown {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.2;
+
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform: scale(1.3);
+    }
+}
+
+
+@keyframes flowerPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+@keyframes musicPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 0 rgba(255, 193, 7, 0.4);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 10px rgba(255, 193, 7, 0);
+    }
+}
+
+/* =========================================================
+   🌻 GIRASOLES — 21 DE SEPTIEMBRE
+   STYLE.CSS — PARTE 2
+   ========================================================= */
+
+
+/* =========================================================
+   🌻 GIRASOL INDIVIDUAL
+   ========================================================= */
+
+.sunflower {
+    position: absolute;
+
+    bottom: 15px;
+
+    width: var(--flower-size, 110px);
+    height: 280px;
+
+    transform-origin: bottom center;
+
+    z-index: 15;
+
+    animation:
+        sunflowerGrow 1.8s cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
+
+    opacity: 0;
+}
+
+
+/* =========================================================
+   🌱 TALLO
+   ========================================================= */
+
+.sunflower-stem {
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+
+    width: var(--stem-width, 9px);
+    height: var(--stem-height, 210px);
+
+    transform:
+        translateX(-50%)
+        scaleY(0);
+
+    transform-origin: bottom center;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #1f642b 0%,
+            #4d9b42 45%,
+            #2c722f 100%
+        );
+
+    box-shadow:
+        2px 0 5px rgba(0, 0, 0, 0.15);
+
+    animation:
+        stemGrow 1.5s cubic-bezier(0.22, 1, 0.36, 1)
+        forwards;
+}
+
+
+/* =========================================================
+   🍃 HOJAS
+   ========================================================= */
+
+.leaf {
+    position: absolute;
+
+    width: var(--leaf-width, 75px);
+    height: var(--leaf-height, 30px);
+
+    border-radius:
+        100% 0 100% 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #65ad4f,
+            #2f7534
+        );
+
+    box-shadow:
+        inset -4px -3px 5px rgba(0, 0, 0, 0.12);
+
+    transform-origin: 0 50%;
+
+    z-index: 2;
+}
+
+
+/* Nervadura de la hoja */
+
+.leaf::after {
+    content: "";
+
+    position: absolute;
+
+    width: 75%;
+
+    height: 2px;
+
+    top: 50%;
+    left: 8%;
+
+    transform:
+        translateY(-50%)
+        rotate(-5deg);
+
+    border-radius: 5px;
+
+    background:
+        rgba(205, 245, 145, 0.45);
+}
+
+
+/* Hoja izquierda */
+
+.leaf-left {
+    left: 50%;
+
+    bottom: 80px;
+
+    transform:
+        translateX(-100%)
+        rotate(25deg);
+}
+
+
+/* Hoja derecha */
+
+.leaf-right {
+    left: 50%;
+
+    bottom: 125px;
+
+    transform:
+        translateX(0)
+        rotate(-20deg);
+
+    border-radius:
+        0 100% 0 100%;
+}
+
+
+/* =========================================================
+   🌻 CABEZA DEL GIRASOL
+   ========================================================= */
+
+.sunflower-head {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: var(--head-size, 105px);
+    height: var(--head-size, 105px);
+
+    transform:
+        translateX(-50%)
+        scale(0);
+
+    transform-origin: center;
+
+    z-index: 10;
+
+    animation:
+        flowerBloom 1s
+        var(--flower-delay, 1.2s)
+        cubic-bezier(0.17, 0.67, 0.35, 1.35)
+        forwards;
+}
+
+
+/* =========================================================
+   🌼 PÉTALOS
+   ========================================================= */
+
+.petal {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: var(--petal-width, 35px);
+    height: var(--petal-height, 65px);
+
+    transform-origin: center bottom;
+
+    border-radius:
+        50% 50% 45% 45%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffe66d 0%,
+            #ffc107 55%,
+            #f59f00 100%
+        );
+
+    box-shadow:
+        inset 0 -4px 5px rgba(188, 111, 0, 0.15);
+
+    transform:
+        translate(-50%, -100%)
+        rotate(var(--rotation))
+        translateY(calc(var(--head-size, 105px) * -0.34));
+
+    transform-origin:
+        center calc(var(--head-size, 105px) * 0.85);
+
+    z-index: 1;
+}
+
+
+/* Brillo del pétalo */
+
+.petal::after {
+    content: "";
+
+    position: absolute;
+
+    top: 8px;
+    left: 50%;
+
+    width: 30%;
+    height: 45%;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 244, 160, 0.35);
+}
+
+
+/* =========================================================
+   🌻 SEGUNDA CAPA DE PÉTALOS
+   ========================================================= */
+
+.petal.inner {
+    width: calc(var(--petal-width, 35px) * 0.82);
+    height: calc(var(--petal-height, 65px) * 0.82);
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff176,
+            #ffc107 65%,
+            #f6a800
+        );
+
+    transform:
+        translate(-50%, -100%)
+        rotate(var(--rotation))
+        translateY(calc(var(--head-size, 105px) * -0.28));
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   🟤 CENTRO DEL GIRASOL
+   ========================================================= */
+
+.sunflower-center {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 42%;
+    height: 42%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    z-index: 5;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #8b5a20 0%,
+            #653d13 45%,
+            #3e260e 100%
+        );
+
+    box-shadow:
+        inset 0 4px 8px rgba(255, 198, 85, 0.15),
+        0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   🌻 SEMILLAS DEL CENTRO
+   ========================================================= */
+
+.seed {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background:
+        #b47a2b;
+
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   💨 MOVIMIENTO DEL GIRASOL
+   ========================================================= */
+
+.sunflower.sway {
+    animation:
+        sunflowerSway
+        var(--sway-duration, 4s)
+        ease-in-out
+        infinite alternate;
+}
+
+
+/*
+   El balanceo empieza después del crecimiento.
+*/
+
+.sunflower.sway .sunflower-head {
+    animation:
+        flowerBloom 1s
+        var(--flower-delay, 1.2s)
+        cubic-bezier(0.17, 0.67, 0.35, 1.35)
+        forwards,
+        headSway
+        var(--sway-duration, 4s)
+        ease-in-out
+        calc(var(--flower-delay, 1.2s) + 1s)
+        infinite alternate;
+}
+
+
+/* =========================================================
+   🌿 HIERBA DECORATIVA
+   ========================================================= */
+
+.grass {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 4px;
+    height: var(--grass-height, 35px);
+
+    border-radius: 100% 0 0 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #235a29,
+            #4c963d
+        );
+
+    transform-origin: bottom center;
+
+    animation:
+        grassSway
+        var(--grass-speed, 3s)
+        ease-in-out
+        infinite alternate;
+}
+
+
+/* =========================================================
+   🍂 PÉTALOS QUE CAEN
+   ========================================================= */
+
+.falling-petal {
+    position: fixed;
+
+    top: -50px;
+
+    width: 13px;
+    height: 22px;
+
+    border-radius:
+        50% 50% 50% 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe66d,
+            #ffb703
+        );
+
+    opacity: 0.85;
+
+    pointer-events: none;
+
+    z-index: 50;
+
+    animation:
+        fallingPetal
+        var(--fall-duration, 7s)
+        linear
+        forwards;
+}
+
+
+/* =========================================================
+   ✨ BRILLO ALREDEDOR DEL GIRASOL
+   ========================================================= */
+
+.sunflower-head::before {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 125%;
+    height: 125%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 204, 0, 0.12);
+
+    filter: blur(15px);
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   🌟 DESTELLOS
+   ========================================================= */
+
+.sparkle {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 8px white,
+        0 0 15px rgba(255, 220, 120, 0.9);
+
+    pointer-events: none;
+
+    animation:
+        sparkleFloat
+        var(--sparkle-duration, 3s)
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   ANIMACIÓN: CRECIMIENTO DEL GIRASOL
+   ========================================================= */
+
+@keyframes sunflowerGrow {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(0.5)
+            translateY(80px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   ANIMACIÓN: CRECIMIENTO DEL TALLO
+   ========================================================= */
+
+@keyframes stemGrow {
+
+    0% {
+        transform:
+            translateX(-50%)
+            scaleY(0);
+    }
+
+    100% {
+        transform:
+            translateX(-50%)
+            scaleY(1);
+    }
+}
+
+
+/* =========================================================
+   ANIMACIÓN: APERTURA DE LA FLOR
+   ========================================================= */
+
+@keyframes flowerBloom {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scale(0)
+            rotate(-15deg);
+    }
+
+    60% {
+        transform:
+            translateX(-50%)
+            scale(1.12)
+            rotate(5deg);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1)
+            rotate(0deg);
+    }
+}
+
+
+/* =========================================================
+   ANIMACIÓN: VIENTO
+   ========================================================= */
+
+@keyframes sunflowerSway {
+
+    0% {
+        transform:
+            rotate(-2deg);
+    }
+
+    100% {
+        transform:
+            rotate(3deg);
+    }
+}
+
+
+@keyframes headSway {
+
+    0% {
+        transform:
+            translateX(-50%)
+            rotate(-2deg);
+    }
+
+    100% {
+        transform:
+            translateX(-50%)
+            rotate(3deg);
+    }
+}
+
+
+/* =========================================================
+   ANIMACIÓN: HIERBA
+   ========================================================= */
+
+@keyframes grassSway {
+
+    0% {
+        transform:
+            rotate(-8deg);
+    }
+
+    100% {
+        transform:
+            rotate(8deg);
+    }
+}
+
+
+/* =========================================================
+   ANIMACIÓN: PÉTALO CAÍDO
+   ========================================================= */
+
+@keyframes fallingPetal {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate3d(0, -20px, 0)
+            rotate(0deg);
+    }
+
+    10% {
+        opacity: 0.9;
+    }
+
+    50% {
+        transform:
+            translate3d(
+                var(--wind-x, 80px),
+                50vh,
+                0
+            )
+            rotate(180deg);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate3d(
+                var(--wind-end, -50px),
+                110vh,
+                0
+            )
+            rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   ANIMACIÓN: DESTELLOS
+   ========================================================= */
+
+@keyframes sparkleFloat {
+
+    0%,
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(0.5);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translateY(-15px)
+            scale(1.2);
+    }
+}
+
+
+/* =========================================================
+   📱 TABLETS
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .moon-glow {
+        width: 120px;
+        height: 120px;
+
+        top: 7%;
+        right: 5%;
+    }
+
+    .moon-glow::after {
+        width: 105px;
+        height: 105px;
+    }
+
+    .hero-section {
+        padding-top: 50px;
+        padding-bottom: 220px;
+    }
+
+    .hero-content {
+        padding:
+            20px 15px;
+    }
+
+    .small-message {
+        font-size: 0.8rem;
+
+        letter-spacing: 2px;
+    }
+
+    .main-message {
+        padding:
+            0 10px;
+
+        font-size: 0.95rem;
+    }
+
+    .sunflower-field {
+        height: 270px;
+    }
+
+    .music-player {
+        right: 15px;
+        bottom: 15px;
+
+        min-width: auto;
+
+        padding: 8px 12px;
+    }
+
+    .music-title {
+        font-size: 0.72rem;
+    }
+
+    .music-status {
+        font-size: 0.58rem;
+    }
+}
+
+
+/* =========================================================
+   📱 CELULARES
+   ========================================================= */
+
+@media (max-width: 576px) {
+
+    .sunflower-page {
+        min-height: 100svh;
+    }
+
+    .hero-section {
+        min-height: 100svh;
+
+        padding-top: 35px;
+        padding-bottom: 200px;
+    }
+
+    .small-message {
+        font-size: 0.7rem;
+
+        letter-spacing: 1.5px;
+    }
+
+    .main-title {
+        font-size: 3.1rem;
+
+        line-height: 1;
+    }
+
+    .subtitle {
+        font-size: 1.8rem;
+    }
+
+    .main-message {
+        font-size: 0.85rem;
+
+        line-height: 1.7;
+    }
+
+    .btn-sunflower {
+        padding:
+            11px 20px;
+
+        font-size: 0.85rem;
+    }
+
+    .sunflower-field {
+        height: 230px;
+    }
+
+    .sunflower {
+        transform-origin:
+            bottom center;
+    }
+
+    .message-card {
+        padding:
+            30px 20px;
+    }
+
+    .message-card h3 {
+        font-size: 2.4rem;
+    }
+
+    .message-card p {
+        font-size: 0.9rem;
+    }
+
+    .card-sunflower {
+        font-size: 3.2rem;
+    }
+
+    .music-player {
+        right: 50%;
+
+        transform:
+            translateX(50%);
+
+        bottom: 12px;
+
+        border-radius: 40px;
+    }
+
+    .music-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .music-info {
+        padding-right: 5px;
+    }
+
+    .moon-glow {
+        width: 90px;
+        height: 90px;
+
+        top: 5%;
+        right: 3%;
+    }
+
+    .moon-glow::after {
+        width: 80px;
+        height: 80px;
+
+        left: 12px;
+    }
+}
+
+
+/* =========================================================
+   📱 CELULARES MUY PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .main-title {
+        font-size: 2.7rem;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+    }
+
+    .main-message {
+        font-size: 0.8rem;
+    }
+
+    .hero-section {
+        padding-bottom: 190px;
+    }
+
+    .sunflower-field {
+        height: 215px;
+    }
+
+    .music-player {
+        max-width: 90%;
+    }
+}
+
+
+/* =========================================================
+   ♿ RESPETAR PREFERENCIA DE MENOS MOVIMIENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+    }
+}
 
