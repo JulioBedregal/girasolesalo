@@ -1,1 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para ti 🌻 | 21 de Septiembre</title>
+
+    <!-- Bootstrap 5.0 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3qPbTn3b0j0R8Q7m9G8a0b5M8m8Q0z7f6b7m0K5v1Z7M"
+        crossorigin="anonymous"
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Nuestro CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         PANTALLA PRINCIPAL
+    ====================================================== -->
+    <main class="sunflower-page">
+
+        <!-- Fondo de estrellas / partículas -->
+        <div class="particles" id="particles"></div>
+
+        <!-- Luna / brillo decorativo -->
+        <div class="moon-glow"></div>
+
+        <!-- =================================================
+             CONTENIDO PRINCIPAL
+        ================================================== -->
+        <section class="hero-section container-fluid">
+
+            <div class="hero-content text-center">
+
+                <p class="small-message">
+                    Para alguien muy especial ✨
+                </p>
+
+                <h1 class="main-title">
+                    Feliz 21 de Septiembre
+                </h1>
+
+                <h2 class="subtitle">
+                    🌻 Un pequeño detalle para ti 🌻
+                </h2>
+
+                <p class="main-message">
+                    Que estos girasoles representen un poquito
+                    de la alegría y luz que traes a mi vida.
+                </p>
+
+                <!-- Botón para comenzar la animación -->
+                <button
+                    id="startButton"
+                    class="btn btn-sunflower"
+                    type="button"
+                >
+                    <span>🌻</span>
+                    Ver mi sorpresa
+                    <span>✨</span>
+                </button>
+
+            </div>
+
+            <!-- =================================================
+                 CAMPO DE GIRASOLES
+            ================================================== -->
+            <div class="sunflower-field" id="sunflowerField">
+
+                <!-- Los girasoles serán generados por JavaScript -->
+
+            </div>
+
+            <!-- =================================================
+                 MENSAJE FINAL
+            ================================================== -->
+            <div
+                id="loveMessage"
+                class="love-message text-center"
+            >
+
+                <div class="message-card">
+
+                    <div class="card-sunflower">
+                        🌻
+                    </div>
+
+                    <h3>
+                        Para ti
+                    </h3>
+
+                    <p>
+                        Así como los girasoles buscan la luz,
+                        espero que siempre encuentres motivos
+                        para sonreír. 💛
+                    </p>
+
+                    <p class="signature">
+                        Con cariño ❤️
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+             REPRODUCTOR DE MÚSICA
+        ====================================================== -->
+        <div class="music-player">
+
+            <button
+                id="musicButton"
+                class="music-button"
+                type="button"
+                aria-label="Reproducir música"
+            >
+                🎵
+            </button>
+
+            <div class="music-info">
+                <span class="music-title">
+                    Una canción para ti
+                </span>
+
+                <span
+                    id="musicStatus"
+                    class="music-status"
+                >
+                    Música pausada
+                </span>
+            </div>
+
+            <audio
+                id="backgroundMusic"
+                loop
+            >
+                <source
+                    src="audio/musica.mp3"
+                    type="audio/mpeg"
+                >
+
+                Tu navegador no soporta audio HTML5.
+            </audio>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         MODAL DE BIENVENIDA
+    ====================================================== -->
+    <div
+        class="modal fade"
+        id="welcomeModal"
+        tabindex="-1"
+        aria-labelledby="welcomeModalLabel"
+        aria-hidden="true"
+    >
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content welcome-modal">
+
+                <div class="modal-body text-center">
+
+                    <div class="modal-flower">
+                        🌻
+                    </div>
+
+                    <h2 id="welcomeModalLabel">
+                        Tengo algo para ti...
+                    </h2>
+
+                    <p>
+                        Una pequeña sorpresa hecha especialmente
+                        para este 21 de septiembre. 💛
+                    </p>
+
+                    <button
+                        id="surpriseButton"
+                        type="button"
+                        class="btn btn-sunflower"
+                        data-bs-dismiss="modal"
+                    >
+                        Abrir sorpresa ✨
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         BOOTSTRAP 5
+    ====================================================== -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MB6L8h2d5v5s9z1z1G6n6G7M9f5L8d2w7H2w3H9m8X0G8N8X9s0P0N7K6P5"
+        crossorigin="anonymous"
+    ></script>
+
+    <!-- Nuestro JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
 
