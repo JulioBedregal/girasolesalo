@@ -1662,17 +1662,22 @@ body {
 .youtube-player-container {
     position: fixed;
 
-    width: 1px;
-    height: 1px;
+    width: 200px;
+    height: 200px;
 
-    left: -100px;
-    top: -100px;
+    left: -210px;
+    top: 10px;
 
     overflow: hidden;
 
-    opacity: 0;
+    opacity: 0.01;
 
     pointer-events: none;
+
+    z-index: -1;
 }
 
-
+.youtube-player-container iframe {
+    width: 200px !important;
+    height: 200px !important;
+}
